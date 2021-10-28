@@ -1,4 +1,4 @@
-name: flutter_course
+name: myapp
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -76,6 +76,7 @@ flutter:
     - family: SansPro
       fonts:
         - asset: fonts/SourceSansPro-Regular.ttf
+
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
