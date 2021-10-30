@@ -7,7 +7,15 @@ void main() {
   );
 }
 
-class IdCard extends StatelessWidget {
+class IdCard extends StatefulWidget {
+  @override
+  State<IdCard> createState() => _IdCardState();
+}
+
+class _IdCardState extends State<IdCard> {
+
+  int programmingLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +25,17 @@ class IdCard extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.grey[850],      
         elevation: 0.0,   //odstranim drop shadow od appBara
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (programmingLevel < 10) {
+            setState(() {
+              programmingLevel++;
+            });
+          }
+        },
+        child: Icon(Icons.add),
+        backgroundColor: Colors.grey[600],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -61,7 +80,7 @@ class IdCard extends StatelessWidget {
             ),
             SizedBox(height: 10.0,),  //adding space between widgets
             Text(
-              '6/10',
+              '$programmingLevel/10',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 1.8,
@@ -93,3 +112,4 @@ class IdCard extends StatelessWidget {
     );
   }
 }
+
